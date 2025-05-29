@@ -53,16 +53,23 @@ void setup(){
   pinMode(IN4, OUTPUT); 
 
   Serial.println("Probando motores...");
-  moverAtras(150); delay(1000);
-  detenerMotores(); delay(500);
+  moverAtras(150); 
+  delay(1000);
+  detenerMotores(); 
+  delay(1000);
 
-  moverAdelante(150); delay(1000);
-  detenerMotores(); delay(500);
+  moverAdelante(150); 
+  delay(1000);
+  detenerMotores(); 
+  delay(1000);
 
-  girarIzquierda(120); delay(500); // Giro corto
-  detenerMotores(); delay(500);
+  girarIzquierda(120); 
+  delay(1000); // Giro corto
+  detenerMotores(); 
+  delay(1000);
 
-  girarDerecha(120); delay(500); // Giro corto
+  girarDerecha(120); 
+  delay(100); // Giro corto
   detenerMotores();
   Serial.println("Prueba de motores finalizada.");
 }
@@ -172,4 +179,13 @@ void detenerMotores() {
   Serial.println("Motores Detenidos");
 }
 
+void mirarHorizonte(){
+  moverAdelante()
+}
+void girarCabeza(int giro){
+  if (distanceCM < 5 && distanceCM > 0){
+      myServo.write(giro)
+
+  }
+}
 
