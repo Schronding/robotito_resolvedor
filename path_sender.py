@@ -78,7 +78,7 @@ if __name__ == "__main__":
     if arduino_conn and arduino_conn.isOpen():
         # Secuencia de prueba
         # secuencia_movimientos = "F" # Prueba con un solo comando primero
-        secuencia_movimientos = "!E" #!SFFRFLFFF
+        secuencia_movimientos = "!SFFRFLFFFLR" #!SFFRFLFFFLR
         enviar_instrucciones(arduino_conn, secuencia_movimientos)
 
         arduino_conn.close()
