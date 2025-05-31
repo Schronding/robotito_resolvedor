@@ -1,6 +1,19 @@
 import serial
 import time
 
+laberinto_real = [
+        "############",
+        "S    #     #",
+        "####     ###",
+        "#          #",
+        "# # ####   #",
+        "# #   #    #",
+        "# #   #  ###",
+        "#   #      #",
+        "# #######  #",
+        "#          #",
+        "##########E#"] 
+        
 def enviar_instrucciones(arduino_serial, instrucciones_str):
     if not arduino_serial.isOpen():
         print("La conexión serial no está abierta.")
@@ -78,7 +91,7 @@ if __name__ == "__main__":
     if arduino_conn and arduino_conn.isOpen():
         # Secuencia de prueba
         # secuencia_movimientos = "F" # Prueba con un solo comando primero
-        secuencia_movimientos = "!SFFRFLFFFLR" #!SFFRFLFFFLR
+        secuencia_movimientos = "!E" #!SFFRFLFFFLR
         enviar_instrucciones(arduino_conn, secuencia_movimientos)
 
         arduino_conn.close()
