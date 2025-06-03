@@ -12,7 +12,7 @@ const int IN4 = 13;
 const int VELOCIDAD_AVANCE = 150;
 const int VELOCIDAD_GIRO = 120;
 const int TIEMPO_GIRO_90_GRADOS = 1500; // Tiempo para un giro de 90 grados
-const int TIEMPO_AVANCE_F = 500;       // Tiempo para avanzar con comando 'F' (0.5 segundos)
+const int TIEMPO_AVANCE_F = 1650;       // Tiempo para avanzar con comando 'F' (0.5 segundos)
 const int PAUSA_ENTRE_COMANDOS = 200;  // Pausa entre la finalización de un comando y el inicio del siguiente
 
 // Direcciones y configuración para la EEPROM

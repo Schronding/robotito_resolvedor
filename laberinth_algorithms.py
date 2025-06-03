@@ -28,19 +28,18 @@ DIR_TO_IDX = {(-1,0):0, (0,1):1, (1,0):2, (0,-1):3}
 IDX_TO_DR_DC = {0:(-1,0), 1:(0,1), 2:(1,0), 3:(0,-1)}
 
 # --- Representacion grafica de nuestro laberinto real ---
-# (Tomado de path_sender.py, asumiendo que esta es la versión definitiva que quieres usar)
 laberinto_real = [
-        "############",
-        "S    #     #",
-        "####     ###",
-        "#          #",
-        "# # ####   #",
-        "# #   #    #",
-        "# #   #  ###",
-        "#   #      #",
-        "# #######  #",
-        "#          #",
-        "##########E#"] 
+        "###########",
+        "S    #    #",
+        "#### #   ##",
+        "#         #",
+        "#   ####  #",
+        "#     #   #",
+        "#     # ###",
+        "#   #     #",
+        "# ######  #",
+        "#         #",
+        "#########E#"] 
 
 # --- Funciones de Procesamiento del Laberinto y Búsqueda de Caminos ---
 def parse_laberinto(laberinto_str_list):
@@ -185,7 +184,6 @@ def convertir_camino_a_instrucciones(camino_coordenadas):
 
 # --- Funciones de Visualización y Grafo ---
 def visualizar_camino_en_laberinto(laberinto_str_list, camino_coordenadas):
-    # ... (sin cambios respecto a tu versión, asumiendo que está correcta)
     if not camino_coordenadas: return ["Laberinto original"] + laberinto_str_list
     lab_visual = [list(fila) for fila in laberinto_str_list]
     for r_coord, c_coord in camino_coordenadas:
@@ -197,7 +195,6 @@ def visualizar_camino_en_laberinto(laberinto_str_list, camino_coordenadas):
     return ["Laberinto con camino marcado (*):"] + ["".join(fila) for fila in lab_visual]
 
 def camino_a_grafo_ponderado(camino_coordenadas):
-    # ... (sin cambios)
     if not camino_coordenadas or len(camino_coordenadas) < 2: return nx.Graph(), {}, {}
     G = nx.Graph(); pos_layout = {}; edge_labels = {}
     nodo_grafo_actual = camino_coordenadas[0]
@@ -224,7 +221,6 @@ def camino_a_grafo_ponderado(camino_coordenadas):
     return G, pos_layout, edge_labels
 
 def visualizar_grafo_de_camino(G, pos, edge_labels, title):
-    # ... (sin cambios, usa num=title)
     if not G.nodes(): print(f"Grafo para '{title}' vacío."); return
     plt.figure(num=title, figsize=(9, 7)) 
     node_labels = {node: f"({node[0]},{node[1]})" for node in G.nodes()}
